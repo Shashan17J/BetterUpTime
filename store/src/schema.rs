@@ -48,9 +48,4 @@ diesel::joinable!(website -> user (user_id));
 diesel::joinable!(website_tick -> region (region_id));
 diesel::joinable!(website_tick -> website (website_id));
 
-diesel::allow_tables_to_appear_in_same_query!(
-    region,
-    user,
-    website,
-    website_tick,
-);
+diesel::allow_tables_to_appear_in_same_query!(region, user, website, website_tick,);

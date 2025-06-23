@@ -3,7 +3,7 @@ use std::env;
 use dotenvy::dotenv;
 
 pub struct Config {
-    pub db_url: String
+    pub db_url: String,
 }
 
 impl Default for Config {
@@ -11,8 +11,6 @@ impl Default for Config {
         dotenv().ok();
         let db_url = env::var("DATABASE_URL")
             .unwrap_or_else(|_| panic!("Please provide the database_url environment variable"));
-        Self {
-            db_url
-        }
+        Self { db_url }
     }
 }
