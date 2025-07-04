@@ -8,5 +8,5 @@ pub struct CreateWebsiteInput {
 #[derive(Serialize, Deserialize)]
 pub struct CreateUserInput {
     pub username: String,
-    pub password: String
+    pub password: String,
 }

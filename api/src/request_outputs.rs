@@ -13,11 +13,11 @@ pub struct GetWebsiteOutput {
 #[derive(Serialize, Deserialize)]
 
 pub struct CreateUserOutput {
-    pub id: String
+    pub id: String,
 }
 
 #[derive(Serialize, Deserialize)]
 
 pub struct SigninOutput {
-    pub jwt: String
+    pub jwt: String,
 }
