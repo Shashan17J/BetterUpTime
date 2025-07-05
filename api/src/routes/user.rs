@@ -12,8 +12,8 @@ use store::store::Store;
 
 #[derive(Debug, Serialize, Deserialize)]
 
-struct Claims {
-    sub: String,
+pub struct Claims {
+    pub sub: String,
     exp: usize,
 }
 

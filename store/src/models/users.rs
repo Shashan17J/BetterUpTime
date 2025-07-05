@@ -40,7 +40,7 @@ impl Store {
 
         let user_result = user
             .filter(username.eq(input_username))
-            .select(User::as_select())  //covert it into User Struct
+            .select(User::as_select()) //covert it into User Struct
             .first(&mut self.conn)?;
 
         if user_result.password != input_password {

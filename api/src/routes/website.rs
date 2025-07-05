@@ -1,5 +1,6 @@
 use std::sync::{Arc, Mutex};
 
+use crate::auth_middleware::UserId;
 use crate::request_inputs::CreateWebsiteInput;
 use crate::request_outputs::{CreateWebsiteOutput, GetWebsiteOutput};
 use poem::{
@@ -17,7 +18,11 @@ pub fn get_website(
     let mut locked_s = s.lock().unwrap();
     let website = locked_s.get_website(id, user_id).unwrap();
 
-    Json(GetWebsiteOutput { url: website.url })
+    Json(GetWebsiteOutput { 
+        url: website.url,
+        id: website.id,
+        user_id: website.user_id
+     })
 }
 
 #[handler]

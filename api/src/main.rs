@@ -15,7 +15,7 @@ pub mod routes;
 async fn main() -> Result<(), std::io::Error> {
     let s = Arc::new(Mutex::new(Store::new().unwrap()));
     let app = Route::new()
-        .at("/website/:website_id", get(get_website))
+        .at("/status/:website_id", get(get_website))
         .at("/website", post(create_website))
         .at("/user/signup", post(sign_up))
         .at("/user/signin", post(sign_in))
